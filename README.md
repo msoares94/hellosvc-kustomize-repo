@@ -1,0 +1,1 @@
+# hellosvc-kustomize-repo
