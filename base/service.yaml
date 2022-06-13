@@ -1,0 +1,88 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: development
+    app.openshift.io/vcs-uri: https://github.com/rafamqrs/demo-pipeline-tkn.git
+    jkube.io/git-branch: development
+    jkube.io/git-commit: d892b932ca128048b302c5d731b28e9687620239
+    jkube.io/git-url: https://github.com/rafamqrs/demo-pipeline-tkn.git
+    jkube.io/scm-tag: HEAD
+    jkube.io/scm-url: https://github.com/spring-projects/spring-boot/hello-service
+    prometheus.io/path: /metrics
+    prometheus.io/port: "9779"
+    prometheus.io/scrape: "true"
+  creationTimestamp: "2022-06-13T20:34:46Z"
+  labels:
+    app: hello-service
+    expose: "true"
+    group: com.redhat.sample
+    provider: jkube
+    version: 0.0.1-SNAPSHOT
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:app.openshift.io/vcs-ref: {}
+          f:app.openshift.io/vcs-uri: {}
+          f:jkube.io/git-branch: {}
+          f:jkube.io/git-commit: {}
+          f:jkube.io/git-url: {}
+          f:jkube.io/scm-tag: {}
+          f:jkube.io/scm-url: {}
+          f:prometheus.io/path: {}
+          f:prometheus.io/port: {}
+          f:prometheus.io/scrape: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:expose: {}
+          f:group: {}
+          f:provider: {}
+          f:version: {}
+      f:spec:
+        f:ports:
+          .: {}
+          k:{"port":8080,"protocol":"TCP"}:
+            .: {}
+            f:name: {}
+            f:port: {}
+            f:protocol: {}
+            f:targetPort: {}
+        f:selector:
+          .: {}
+          f:app: {}
+          f:group: {}
+          f:provider: {}
+        f:sessionAffinity: {}
+        f:type: {}
+    manager: okhttp
+    operation: Update
+    time: "2022-06-13T20:34:46Z"
+  name: hello-service
+  namespace: teste
+  resourceVersion: "5393261"
+  uid: 6389f7d4-c074-479b-9789-5021da905318
+spec:
+  clusterIP: 172.30.183.20
+  clusterIPs:
+  - 172.30.183.20
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - name: http
+    port: 8080
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: hello-service
+    group: com.redhat.sample
+    provider: jkube
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

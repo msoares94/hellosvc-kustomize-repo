@@ -1,0 +1,80 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  annotations:
+    app.openshift.io/vcs-ref: development
+    app.openshift.io/vcs-uri: https://github.com/rafamqrs/demo-pipeline-tkn.git
+    jkube.io/git-branch: development
+    jkube.io/git-commit: d892b932ca128048b302c5d731b28e9687620239
+    jkube.io/git-url: https://github.com/rafamqrs/demo-pipeline-tkn.git
+    jkube.io/scm-tag: HEAD
+    jkube.io/scm-url: https://github.com/spring-projects/spring-boot/hello-service
+  creationTimestamp: "2022-06-13T20:34:47Z"
+  labels:
+    app: hello-service
+    group: com.redhat.sample
+    provider: jkube
+    version: 0.0.1-SNAPSHOT
+  managedFields:
+  - apiVersion: route.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:metadata:
+        f:annotations:
+          .: {}
+          f:app.openshift.io/vcs-ref: {}
+          f:app.openshift.io/vcs-uri: {}
+          f:jkube.io/git-branch: {}
+          f:jkube.io/git-commit: {}
+          f:jkube.io/git-url: {}
+          f:jkube.io/scm-tag: {}
+          f:jkube.io/scm-url: {}
+        f:labels:
+          .: {}
+          f:app: {}
+          f:group: {}
+          f:provider: {}
+          f:version: {}
+      f:spec:
+        f:port:
+          .: {}
+          f:targetPort: {}
+        f:to:
+          f:kind: {}
+          f:name: {}
+          f:weight: {}
+        f:wildcardPolicy: {}
+    manager: okhttp
+    operation: Update
+    time: "2022-06-13T20:34:47Z"
+  - apiVersion: route.openshift.io/v1
+    fieldsType: FieldsV1
+    fieldsV1:
+      f:status:
+        f:ingress: {}
+    manager: openshift-router
+    operation: Update
+    time: "2022-06-13T20:34:47Z"
+  name: hello-service
+  namespace: teste
+  resourceVersion: "5397219"
+  uid: 5ab34d92-98f2-4123-b4ef-e4dda0495e22
+spec:
+  host: hello-service-teste.apps.cluster-2b8a.2b8a.example.opentlc.com
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: hello-service
+    weight: 100
+  wildcardPolicy: None
+status:
+  ingress:
+  - conditions:
+    - lastTransitionTime: "2022-06-13T20:34:47Z"
+      status: "True"
+      type: Admitted
+    host: hello-service-teste.apps.cluster-2b8a.2b8a.example.opentlc.com
+    routerCanonicalHostname: router-default.apps.cluster-2b8a.2b8a.example.opentlc.com
+    routerName: default
+    wildcardPolicy: None
