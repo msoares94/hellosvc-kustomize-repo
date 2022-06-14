@@ -2,15 +2,11 @@ apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
   labels:
-    app: hello-service
-    group: com.redhat.sample
     provider: jkube
-    version: 0.0.1-SNAPSHOT
   name: hello-service
-  namespace: teste
 spec:
   replicas: 1
-  revisionHistoryLimit: 2
+  revisionHistoryLimit: 10
   selector:
     app: hello-service
     group: com.redhat.sample
@@ -27,20 +23,8 @@ spec:
     type: Rolling
   template:
     metadata:
-      annotations:
-        app.openshift.io/vcs-ref: development
-        app.openshift.io/vcs-uri: https://github.com/rafamqrs/demo-pipeline-tkn.git
-        jkube.io/git-branch: development
-        jkube.io/git-commit: d892b932ca128048b302c5d731b28e9687620239
-        jkube.io/git-url: https://github.com/rafamqrs/demo-pipeline-tkn.git
-        jkube.io/scm-tag: HEAD
-        jkube.io/scm-url: https://github.com/spring-projects/spring-boot/hello-service
-      creationTimestamp: null
       labels:
-        app: hello-service
-        group: com.redhat.sample
         provider: jkube
-        version: 0.0.1-SNAPSHOT
       name: hello-service
     spec:
       containers:
@@ -50,7 +34,7 @@ spec:
             fieldRef:
               apiVersion: v1
               fieldPath: metadata.namespace
-        image: image-registry.openshift-image-registry.svc:5000/teste/hello-service@sha256:4902e39150b08950ebc00d4ca3b772511b9d5100bfa33ec40fbbf090818fd60a
+        image: <PATCH_ME>
         imagePullPolicy: IfNotPresent
         livenessProbe:
           failureThreshold: 3
