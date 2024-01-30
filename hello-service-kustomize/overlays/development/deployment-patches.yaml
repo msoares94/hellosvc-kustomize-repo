@@ -7,4 +7,4 @@ spec:
     spec:
       containers:
       - name: hello-service
-        image: quay.io/demo-pipelines/hello-service:prod-2024-01-30-12-54-51
+        image: quay.io/demo-pipelines/hello-service:prod-2024-01-30-13-00-00
