@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: spring-boot
-        image: image-registry.openshift-image-registry.svc:5000/hello-spring-dev/hello-service-dev:prod-2024-01-29-21-33-56
+        image: quay.io/demo-pipelines/hello-service:prod-2024-01-30-11-33-43
         ports:
         - containerPort: 8080
           name: http
