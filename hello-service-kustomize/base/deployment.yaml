@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: hello-service
-  namespace: hello-spring-dev
+  namespace: hello-spring-prod
 spec:
   replicas: 1
   selector:
