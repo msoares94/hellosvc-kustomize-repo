@@ -4,9 +4,7 @@ metadata:
   labels:
     provider: jkube
   name: hello-service
-  namespace: teste
-  resourceVersion: "5393261"
-  uid: 6389f7d4-c074-479b-9789-5021da905318
+  namespace: hello-spring-prod
 spec:
   ports:
   - name: http
