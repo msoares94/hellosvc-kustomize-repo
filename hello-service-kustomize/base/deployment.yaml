@@ -4,6 +4,7 @@ metadata:
   labels:
     provider: jkube
   name: hello-service
+  namespace: hello-spring-dev
 spec:
   replicas: 1
   revisionHistoryLimit: 10
