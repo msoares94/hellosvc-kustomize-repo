@@ -4,7 +4,7 @@ metadata:
   labels:
     provider: jkube
   name: hello-service
-  namespace: teste
+  namespace: hello-spring-dev
 spec:
   port:
     targetPort: 8080
