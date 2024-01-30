@@ -1,6 +1,7 @@
 kind: Deployment
 metadata:
   name: hello-service
+  namespace: hello-spring-prod
 spec:
   template:
     spec:
