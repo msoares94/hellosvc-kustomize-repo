@@ -1,8 +1,6 @@
 apiVersion: apps.openshift.io/v1
-kind: DeploymentConfig
+kind: Deployment
 metadata:
-  labels:
-    provider: jkube
   name: hello-service
   namespace: hello-spring-dev
 spec:
@@ -10,8 +8,6 @@ spec:
   revisionHistoryLimit: 10
   selector:
     app: hello-service
-    group: com.redhat.sample
-    provider: jkube
   strategy:
     activeDeadlineSeconds: 21600
     resources: {}
