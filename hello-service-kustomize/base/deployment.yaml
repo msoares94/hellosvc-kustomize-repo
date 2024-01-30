@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: spring-boot
-        image: <PATCH_ME>
+        image: image-registry.openshift-image-registry.svc:5000/hello-spring-dev/hello-service-dev:dev-2024-01-29-21-33-56
         ports:
         - containerPort: 8080
           name: http
