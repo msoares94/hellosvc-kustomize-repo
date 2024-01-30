@@ -24,8 +24,6 @@ spec:
     type: Rolling
   template:
     metadata:
-      labels:
-        provider: jkube
       name: hello-service
     spec:
       containers:
